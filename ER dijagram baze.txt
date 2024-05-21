@@ -1,0 +1,30 @@
+Table korisnici {
+  id integer [primary key]
+  name varchar
+  email varchar
+  username varchar
+  password varchar
+  company_id integer [ref: > kompanije.id]
+  created_at timestamp
+}
+
+Table kompanije {
+  id integer [primary key]
+  name varchar
+  email varchar
+  logo varchar [note: 'Path to logo file']
+  address varchar
+  tax_id varchar
+  created_at timestamp
+}
+
+Table klijenti {
+  id integer [primary key]
+  name varchar
+  email varchar
+  phone varchar
+  company_id integer [ref: > kompanije.id]
+  created_at timestamp
+}
+
+https://dbdiagram.io/d/Mini-CRM-6643e4c99e85a46d55dc9edd
